@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: project1
+spec:
+  destination:
+    namespace: project1
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: project1
+    repoURL: https://github.com/Mokk12/argocd-test-2.git
+    targetRevision: main
+  syncPolicy:
+    automated: {}
